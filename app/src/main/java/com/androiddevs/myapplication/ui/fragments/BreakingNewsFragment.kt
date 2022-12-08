@@ -28,18 +28,18 @@ class BreakingNewsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle? 
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding =FragmentBreakingNewsBinding.inflate(inflater)
 
         viewModel = (activity as MainActivity).viewModel
 
-        adapter = MyAdapter(MyAdapter.OnUserClickListener{
+        adapter = MyAdapter(MyAdapter.OnUserClickListener{ article->
             Toast.makeText(context," clicked",Toast.LENGTH_LONG).show()
-            val bundle = Bundle().apply {
-                putSerializable(" article", it)
-            }
-            findNavController().navigate(R.id.action_breakingNewsFragment_to_articleFragment,bundle)
+//            val bundle = Bundle().apply {
+//                putSerializable(" article", article)
+//            }
+            findNavController().navigate(BreakingNewsFragmentDirections.actionBreakingNewsFragmentToArticleFragment(article))
 
         })
 

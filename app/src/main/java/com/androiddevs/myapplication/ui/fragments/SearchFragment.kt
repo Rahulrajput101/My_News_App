@@ -39,13 +39,10 @@ class SearchFragment : Fragment() {
         binding = FragmentSearchBinding.inflate(inflater)
         viewModel = (activity as MainActivity).viewModel
 
-        val adapter = MyAdapter(MyAdapter.OnUserClickListener {
+         adapter = MyAdapter(MyAdapter.OnUserClickListener {
 
             Toast.makeText(context," clciked", Toast.LENGTH_LONG).show()
-//            val bundle = Bundle().apply {
-//                putSerializable("article",it)
-//            }
-//            findNavController().navigate(R.id.action_breakingNewsFragment_to_articleFragment,bundle)
+             findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToArticleFragment(it))
         })
         binding.rvSearchNews.adapter =adapter
         binding.rvSearchNews.layoutManager = LinearLayoutManager(context)
