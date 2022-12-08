@@ -41,7 +41,7 @@ class SearchFragment : Fragment() {
 
         val adapter = MyAdapter(MyAdapter.OnUserClickListener {
 
-         //   Toast.makeText(context," clciked", Toast.LENGTH_LONG).show()
+            Toast.makeText(context," clciked", Toast.LENGTH_LONG).show()
 //            val bundle = Bundle().apply {
 //                putSerializable("article",it)
 //            }
