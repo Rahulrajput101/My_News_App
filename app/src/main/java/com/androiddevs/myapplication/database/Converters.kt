@@ -7,7 +7,7 @@ import com.androiddevs.myapplication.model.Source
 class Converters {
 
      @TypeConverter
-    fun fromSource(source: Source) : String{
+    fun fromSource(source: Source) : String? {
         return source.name
     }
 

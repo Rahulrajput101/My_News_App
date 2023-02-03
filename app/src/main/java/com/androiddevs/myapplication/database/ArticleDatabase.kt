@@ -11,7 +11,7 @@ import kotlinx.coroutines.internal.synchronized
 
 @Database(
     entities = [Article::class],
-    version =1
+    version =2
 )
 @TypeConverters(Converters::class)
  abstract class ArticleDatabase : RoomDatabase() {
@@ -30,7 +30,9 @@ import kotlinx.coroutines.internal.synchronized
          }
          fun createDatabase(context: Context) =
              Room.databaseBuilder(context.applicationContext, ArticleDatabase::class.java,
-             "articleDb.db").build()
+             "articleDb.db")
+                 .fallbackToDestructiveMigration()
+                 .build()
 
 
      }

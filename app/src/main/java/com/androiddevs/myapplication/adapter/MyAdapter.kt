@@ -88,4 +88,5 @@ class MyAdapter(val onUserClickListener: OnUserClickListener) :
     class OnUserClickListener(val clickListener: (article: Article) -> Unit) {
         fun onClick(article: Article) = clickListener(article)
     }
+
 }

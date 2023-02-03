@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val database = ArticleDatabase(this)
         val repositary = NewsRepositary(database)
-        val factory = NewsViewModelFactory(repositary)
+        val factory = NewsViewModelFactory(repositary,application)
         viewModel = ViewModelProvider(this, factory).get(NewsViewModel::class.java)
 
 
